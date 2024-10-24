@@ -1,6 +1,6 @@
 id: it.unibo.tuprolog.ide
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - "org.freedesktop.Sdk.Extension.openjdk17"
@@ -24,6 +24,7 @@ modules:
       - install -Dm0775 -t ${FLATPAK_DEST}/bin/ tuprolog-ide
       - install -Dm0664 -t ${FLATPAK_DEST}/share/applications/ it.unibo.tuprolog.ide.desktop
       - install -Dm0664 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ it.unibo.tuprolog.ide.svg
+      - install -Dm0664 -t ${FLATPAK_DEST}/share/metainfo/ it.unibo.tuprolog.ide.metainfo.xml
     sources:
       - type: file
         url: https://github.com/tuProlog/2p-kt/releases/download/1.0.4/2p-ide-1.0.4-redist.jar
@@ -34,6 +35,11 @@ modules:
         sha256: 136d1f65e008d75f36cbdfcacd2c5fa5b3508ad7e29a7b6aea665978b848c944
         dest-filename: it.unibo.tuprolog.ide.svg
       - type: file
-        path: it.unibo.tuprolog.ide.desktop
+        url: https://raw.githubusercontent.com/VaiTon/2p-kt/refs/heads/master/it.unibo.tuprolog.ide.desktop
+        sha256: e90d98bf0d4480035d683692d666d71eaafdaf3c619b20dc2dd20d81ae6f2285
+      - type: file
+        url: https://raw.githubusercontent.com/VaiTon/2p-kt/refs/heads/master/it.unibo.tuprolog.ide.metainfo.xml
+        sha256: 6272ab522ee3d5a55793ccc5ce16538826b30454889eb972f9f5f04d009b47fa
+
       - type: file
         path: tuprolog-ide
